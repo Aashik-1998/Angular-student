@@ -1,0 +1,102 @@
+.signup-container{
+    background: #F2F2F2 0% 0% no-repeat padding-box;
+    margin: 20px 0px;
+    padding: 20px 30px 30px 30px;
+    position: absolute;
+    top: 10%;
+    right: 0;
+    left: 0;
+    max-width: 1076px;
+    width: 80%;
+    margin: 0 auto;
+}
+.close-container{
+    text-align: right;
+    img{
+        width: 24px;
+        height: 26px;
+    }
+}
+.close-button{
+    background: none;
+    outline: none;
+    border: none;
+}
+.signup-content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    .signup-heading{
+        margin:30px 0px;
+    }
+}
+.input-container{
+    position: relative;
+    margin: 30px 0px;
+}
+input:focus ~ .floating-label,
+input:not(:focus):valid ~ .floating-label{
+  top: -10px;
+  left: 0px;
+  font-size: 16px;
+  opacity: 1;
+}
+select:focus ~ .floating-label,
+select:not(:focus):valid ~ .floating-label{
+  top: -10px;
+  left: 0px;
+  font-size: 16px;
+  opacity: 1;
+}
+.inputText {
+  background: none;
+  border-bottom: 1px solid black;
+  outline: none;
+  font-size: 14px;
+  width: 410px;
+  padding: 15px 0px 2px 5px;
+}
+
+.floating-label {
+  position: absolute;
+  pointer-events: none;
+  font-size: 24px;
+  left: 0px;
+  top: 5px;
+  transition: 0.2s ease all;
+}
+.SignUpTerms{
+    margin-left: 5px;
+}
+.button-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.loginButton{
+    color: blue;
+    background: none;
+    outline: none;
+}
+.signup-button{
+    padding: 12px 30px;
+    background: transparent linear-gradient(90deg, #6A11CB 0%, #5036DD 37%, #4448E6 55%, #2575FC 100%) 0% 0% no-repeat padding-box;
+    box-shadow: 0px 1px 3px #00000033;
+    border-radius: 4px;
+    border-radius: 5px;
+    margin: 30px 0px;
+    outline: none;
+    color: white;
+    width: 110px;
+    &:disabled{
+        background: #707070;
+    }
+}
+.error-message{
+    color: red;
+    text-align: left;
+    font-size: 12px;
+}
+.loginRedirection{
+    margin-bottom: 30px;
+}

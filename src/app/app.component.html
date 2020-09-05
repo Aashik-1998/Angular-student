@@ -1,0 +1,14 @@
+<header class = "heading">
+  <section class = "main-container">
+    <app-header (loginToggler)="logintoggle($event)"></app-header>
+  </section>
+</header>
+<main class = "main-content">
+  <section class = "main-container">
+    <!-- <app-table (displayDetails) = "onSelect($event)"></app-table> -->
+    <!-- <app-student-detail *ngIf="value" [student]="value"></app-student-detail> -->
+    <app-login *ngIf="toggle" [toggleValue]="toggle"></app-login>
+    <router-outlet></router-outlet>
+  </section>
+</main>
+

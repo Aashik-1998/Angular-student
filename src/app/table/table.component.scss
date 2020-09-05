@@ -1,0 +1,81 @@
+.table-component{
+    margin-bottom: 10px;
+    max-width: 1076px;
+    width: 80%;
+    margin: 0 auto;
+    padding-top: 30px;
+    .table{
+        background-color: white;
+        border-radius: 5px;
+        width: 100%;
+        // border-spacing: 0;
+        .table-heading-container{
+            background: #000000 0% 0% no-repeat;
+            color: #2E9CCA;
+            .table-row{
+                height: 80px;
+                .table-heading{
+                    padding: 20px 15px;
+                    font-size: 24px;
+                    font-family: Arial, Helvetica, sans-serif;
+                    text-align: left;
+                }
+            }
+        }
+    }
+    .content-container{
+        background-color: white;
+        .table-row {
+            td{
+                padding: 20px 15px;
+            }
+            .icon-container{
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                .table-icon{
+                    float: right;
+                    background: none;
+                    outline: none;
+                    border: none;
+                    img{
+                        height: 25px;
+                        width: 25px;
+                    }
+                }
+            }
+        }
+        .odd-row{
+            background: #F2F2F2 0% 0% no-repeat;
+        }
+        .even-row{
+            background: #FFFFFF 0% 0% no-repeat;
+            color: #464866;
+        
+        }
+
+    }
+}
+@media only screen and (max-width: 768px) {
+
+    .table-component{
+        .table{
+            .table-heading-container{
+                .table-row{
+                    height: 80px;
+                    .table-heading{
+                        padding: 20px 3px;
+                        font-size: 12px;
+                    }
+                }
+            }
+        }
+        .content-container{
+            .table-row {
+                td{
+                    padding: 20px 5px;
+                }
+            }
+        }
+    }
+}

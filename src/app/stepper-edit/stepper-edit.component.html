@@ -1,0 +1,59 @@
+<form class="stepperEditForm" [formGroup]="stepperEditForm">
+    <div class="input-container">
+        <input type="name" class="inputText" (change)="valueChanged()" name="Name" formControlName="Name" required />
+        <label class="floating-label">Student Name</label>
+        <div class="errorMsg" *ngIf="stepperEditForm.get('Name').invalid">Name is required</div>
+    </div>
+    <div class="input-container">
+        <input type="name" class="inputText" (change)="valueChanged()" name="Class" formControlName="Class" required />
+        <label class="floating-label">Class</label>
+        <div class="errorMsg" *ngIf="stepperEditForm.get('Class').invalid">class is required</div>
+    </div>
+    <div class="input-container">
+        <input type="text" class="inputText" (change)="valueChanged()" name="Division" formControlName="Division" required />
+        <label class="floating-label">Division</label>
+        <div class="errorMsg" *ngIf="stepperEditForm.get('Division').invalid">Division is required</div>
+    </div>
+    <div class="input-container">
+        <input type="text" class="inputText" (change)="valueChanged()" name="Rank" formControlName="Rank" required />
+        <label class="floating-label">Rank</label>
+        <div class="errorMsg" *ngIf="stepperEditForm.get('Rank').invalid">Rank is required</div>
+    </div>
+    <div class="input-container">
+        <input type="text" class="inputText" (change)="valueChanged()" name="Fee" formControlName="Fee" required />
+        <label class="floating-label">Fees</label>
+        <div class="errorMsg" *ngIf="stepperEditForm.get('Fee').invalid">Fees is required</div>
+    </div>
+    <div class="input-container">
+        <input type="text" class="inputText" (change)="valueChanged()" name="DueDate" formControlName="DueDate" required />
+        <label class="floating-label">Due Date</label>
+        <div class="errorMsg" *ngIf="stepperEditForm.get('DueDate').invalid">Date is required</div>
+    </div>
+    <div class="input-container">
+        <input type="number" class="inputText" (change)="valueChanged()" name="ContactNo" formControlName="ContactNo" required />
+        <label class="floating-label">Contact No</label>
+        <div class="errorMsg" *ngIf="stepperEditForm.get('ContactNo').invalid">Number is required</div>
+    </div>
+    <div class="input-container">
+        <input type="text" class="inputText" (change)="valueChanged()" name="Address" formControlName="Address" required />
+        <label class="floating-label">Address</label>
+        <div class="errorMsg" *ngIf="stepperEditForm.get('Address').invalid">Address is required</div>
+    </div>
+</form>
+
+<!-- <h1>Angular 8 Bootstrap 4 Datepicker Example - ItSolutionStuff.com</h1>
+  
+<form class="form-inline">
+  <div class="form-group">
+    <div class="input-group">
+      <input class="form-control" placeholder="yyyy-mm-dd" name="dp" [(ngModel)]="model" ngbDatepicker #d="ngbDatepicker">
+      <div class="input-group-append">
+        <button class="btn btn-outline-secondary calendar" (click)="d.toggle()" type="button"></button>
+      </div>
+    </div>
+  </div>
+</form>
+   
+<hr/>
+<pre>Model: {{ model | json }}</pre> -->
+

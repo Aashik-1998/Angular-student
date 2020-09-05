@@ -1,0 +1,46 @@
+<form [formGroup]="signupForm" #myForm>
+    <div class="input-container">
+        <input type="text" class="inputText" name="email" formControlName="email" required/>
+        <span class="floating-label">Email</span>
+        <div class="error-message" *ngIf="signupForm.get('email').invalid && signupForm.get('email').touched">Email is Invalid</div>
+
+    </div>
+    <div class="input-container">
+        <input type="text" class="inputText" name="name" formControlName="name" required/>
+        <span class="floating-label">Username</span>
+        <div class="error-message" *ngIf="signupForm.get('name').invalid && signupForm.get('name').touched">Name is required</div>
+
+    </div>
+    <div class="input-container">
+        <select class="inputText"  name="role" formControlName="role" required>
+            <!-- <option value="" class="floating-label" disabled>Choose your Role</option> -->
+            <option *ngFor="let role of roles" class="floating-label"  [ngValue]="role">{{role}}</option>
+         </select>
+        <!-- <input type="text" class="inputText" name="role" formControlName="role" required/> -->
+        <span class="floating-label">Role</span>
+        <div class="error-message" *ngIf="signupForm.get('role').invalid && signupForm.get('role').touched">role is required</div>
+
+    </div>
+    <div class="input-container">
+        <input type="password" class="inputText" name="password" formControlName="password" required/>
+        <span class="floating-label">Password</span>
+        <div class="error-message" *ngIf="signupForm.get('password').invalid && signupForm.get('password').touched">password is required</div>
+
+    </div>
+    <div class="input-container">
+        <input type="password" class="inputText" name="confirmPassword" formControlName="confirmPassword" required/>
+        <span class="floating-label">Confirm Password</span>
+        <div class="error-message" *ngIf="signupForm.get('confirmPassword').invalid && signupForm.get('confirmPassword').touched">Password is required</div>
+    </div>
+    <div class="input-container">
+        <input type="checkbox" class="inputCheckBox" name="termsAndCondition" formControlName="termsAndCondition" required/>
+        <span class="SignUpTerms">I read and agree to <a href = "#">Terms and Condition</a></span>
+    </div>
+    <div class = "error-message">
+        <span *ngIf="isCorrect">{{errorMsg}}</span>
+    </div>
+    <div class="button-container">
+        <button class="signup-button" type="submit" (click)="submit()" [disabled]="!signupForm.valid">Sign up</button>
+        <div class="loginRedirection"><span>Already have a account.?</span><button class="loginButton" (click)="modalLogin()"> Login </button></div>
+    </div>
+</form>

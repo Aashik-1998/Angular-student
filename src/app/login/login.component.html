@@ -1,0 +1,19 @@
+<form class="loginForm" [formGroup]="loginForm">
+    <div class="input-container">
+        <input type="text" class="inputText" name="name" formControlName="name" required />
+        <span class="floating-label">Email/Username</span>
+        <div class="errorMsg" *ngIf="loginForm.get('name').invalid && loginForm.get('name').touched">Name is required</div>
+    </div>
+    <div class="input-container">
+        <input type="password" class="inputText" name="password" formControlName="password" required />
+        <span class="floating-label">Password</span>
+        <div class="errorMsg" *ngIf="loginForm.get('password').invalid && loginForm.get('password').touched">Password is required</div>
+    </div>
+    <div class="error-message">
+        <span *ngIf="isCorrect">{{loginErrorMessage}}</span>
+    </div>
+    <div class="button-container">
+        <button class="forget-password" (click)="modalForgetPass()"> Forget Password </button>
+        <button class="login-button" (click)="submit()" [disabled]="!loginForm.valid">Login</button>
+    </div>
+</form>

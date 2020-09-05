@@ -1,0 +1,78 @@
+<div class="backButtonContainer"><button class = "back-button" (click)="goBack()"> &lt; back</button></div>
+<section>
+    <mat-horizontal-stepper linear #stepper>
+        <ng-template matStepperIcon="edit">
+            <mat-icon role="img" class="mat-icon notranslate material-icons mat-icon-no-color ng-star-inserted" aria-hidden="true">done</mat-icon>
+          </ng-template>
+        <ng-container *ngFor = "let step of steps;index as i">
+            <mat-step label={{step.name}} [editable]="true">
+                <div class="stepperHeadingContainer"> 
+                    <h4 class="stepperHeading">{{step.heading}}</h4>
+                    <span class ="headingDescription">{{step.content}}</span>
+                </div>
+                <div class="stepperContent">
+                    <app-stepper-edit (continueButtonEnable)="enableContinue($event)" (restorePreviousData)="restoreData($event)" *ngIf = "i == 0"></app-stepper-edit>
+                </div>
+                <div class="stepperContent">
+                    <app-details (editAgainButton)="editAgain(stepper)" *ngIf = "i == 1"></app-details>
+                </div>
+                <div class="stepperContent">
+                    <app-details [hiddenEditIcon]="hiddenIcon" *ngIf = "i == (steps.length) - 1"></app-details>
+                </div>
+                <footer class="footerButton">
+                <div>
+                  <button type ="button" class="stepperButton" disabled="{{buttonDisabled}}" (click)="changeEditedValue()" *ngIf = "i == 0" mat-button matStepperNext>Continue</button>
+                  <button type ="button" class="stepperButton" (click)="editedValue()" *ngIf = "i == 1" mat-button matStepperNext>Submit</button>
+                  <button type ="button" class="stepperButton" (click)="goBack()" *ngIf = "i == ((steps.length) - 1)" mat-button matStepperNext>Done</button>
+                  <!-- <button mat-button matStepperPrevious>Back</button> -->
+                  <button class="stepperButton cancel" mat-button (click)="changeCanceledValue()">Cancel</button>
+                </div>
+                </footer>
+            </mat-step>
+        </ng-container>
+    </mat-horizontal-stepper>
+    
+</section>
+
+<!-- <button class = "back-button" (click)="goBack()"> &lt; back</button>
+  
+  <mat-horizontal-stepper linear #stepper>
+    <mat-step label = "Student Details">
+        <app-stepper-edit (continueButtonEnable)="enableContinue($event)" (restorePreviousData)="restoreData($event)"></app-stepper-edit>
+        <div>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+    </mat-step>
+    <mat-step [optional]="isOptional">
+      <form [formGroup]="secondFormGroup">
+        <ng-template matStepLabel>Fill out your address</ng-template>
+        <mat-form-field>
+          <mat-label>Address</mat-label>
+          <input matInput formControlName="secondCtrl" placeholder="Ex. 1 Main St, New York, NY"
+                 required>
+        </mat-form-field>
+        <div>
+          <button mat-button matStepperPrevious>Back</button>
+          <button mat-button matStepperNext>Next</button>
+        </div>
+      </form>
+    </mat-step>
+    <mat-step>
+      <ng-template matStepLabel>Done</ng-template>
+      <p>You are now done.</p>
+      <div>
+        <button mat-button matStepperPrevious>Back</button>
+        <button mat-button (click)="stepper.reset()">Reset</button>
+      </div>
+    </mat-step>
+  </mat-horizontal-stepper>
+   -->
+
+
+<!-- <mat-form-field class="example-full-width" appearance="fill">
+    <mat-label>Choose a date</mat-label>
+    <input matInput [matDatepicker]="picker">
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+  <button mat-raised-button (click)="picker.open()">Open</button>
+   -->

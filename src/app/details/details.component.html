@@ -1,0 +1,48 @@
+<div class = "detail-main-container">
+    <div class = "edit-details">
+        <button (click)="editDetails()" *ngIf="!hiddenEditIcon"><img src="../../assets/icons8-edit (2).svg"/></button>
+    </div>
+    <h2 class = "details-heading"> Student Detail</h2>
+    <div class = "details-content-container">
+            <div class = "row-details">
+                <div class = "left-content">
+                    <span class = "detail-heading"> Student Name</span>
+                    <span class = "detail"> {{students.Name || "NA"}}</span>
+                </div>
+                <div class = "right-content">
+                    <span class = "detail-heading"> Fees</span>
+                    <span class = "detail"> {{students.Fee || "NA"}}</span>
+                </div>
+            </div>
+            <div class = "row-details">
+                <div class = "left-content">
+                    <span class = "detail-heading"> class</span>
+                    <span class = "detail"> {{students.Class || "NA"}}</span>
+                </div>
+                <div class = "right-content">
+                    <span class = "detail-heading"> Due Date</span>
+                    <span class = "detail"> {{students.DueDate || "NA"}}</span>
+                </div>
+            </div>
+            <div class = "row-details">
+                <div class = "left-content">
+                    <span class = "detail-heading"> division </span>
+                    <span class = "detail"> {{students.Division || "NA"}}</span>
+                </div>
+                <div class = "right-content">
+                    <span class = "detail-heading"> Contact Number</span>
+                    <span class = "detail"> {{students.ContactNo || "NA"}}</span>
+                </div>
+            </div>
+            <div class = "row-details">
+                <div class = "left-content">
+                    <span class = "detail-heading"> Rank </span>
+                    <span class = "detail"> {{students.Rank || "NA"}}</span>
+                </div>
+                <div class = "right-content">
+                    <span class = "detail-heading"> Address</span>
+                    <address class = "detail"> {{students.Address || "NA"}}</address>
+                </div>
+            </div>       
+    </div>
+</div>

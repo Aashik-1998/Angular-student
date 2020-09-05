@@ -1,0 +1,29 @@
+<div class = "table-component">
+
+    <table class="table table-striped">
+
+        <thead class="table-heading-container">
+            <tr class="table-row">
+                <th class="table-heading">Student Name</th>
+                <th class="table-heading">Regestration No</th>
+                <th class="table-heading">Class</th>
+                <th class="table-heading">Rank</th>
+                <th class="table-heading"></th>
+            </tr>
+        </thead>
+        <tbody class = "content-container">
+            <tr *ngFor="let student of students; index as i" [ngClass]="(i%2 == 0) ? 'odd-row':'even-row'" class = "table-row">
+                <!-- <th>{{ i + 1 }}</th> -->
+                <td>{{student.Name}}</td>
+                <td>{{student.RegestrationNo}}</td>
+                <td>{{student.Class}}</td>
+                <td>{{student.Rank}}</td>
+                <td class = "icon-container"><button class = "table-icon"  (click)="onSelect(student)"><img src="../../assets/right-arrow.png"></button></td>
+            </tr>
+        </tbody>
+
+    </table>
+</div>
+<!-- <ng-template #elseBlock>No records found...!!!</ng-template> -->
+
+<!-- <app-student-detail *ngIf="selectedStudent" [student] = "selectedStudent"></app-student-detail> -->

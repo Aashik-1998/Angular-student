@@ -1,0 +1,48 @@
+<div class = "main-container heading-container">
+    <h1 class = "heading-title">Student</h1>
+    <div class = "header-button-container">
+        <button class = "header-button login-button" *ngIf="!isLoggedIn" (click)="openLoginModal(true,popup)">LOGIN</button>
+        <button class = "header-button signup-button" *ngIf="!isLoggedIn" (click)="openSignUpModal(popup)">SIGNUP</button>
+        <button class = "header-button user-button" *ngIf="isLoggedIn">{{user}}</button>
+    </div>
+</div>
+<ng-template #popup>
+    <div class="login-container">
+        <div class="close-container">
+            <button (click)= "closePopup()" class = "close-button"><img src="../../assets/cancel.svg" alt="close" /></button>
+        </div>
+        <div class="login-content">
+            <h1 class="login-heading" *ngIf="showLogin">Login</h1>
+            <h1 class="login-heading" *ngIf="showSignUp">Sign Up</h1>
+            <h1 class="login-heading" *ngIf="showForgetPass">Forget Password</h1>
+
+            <div *ngIf="showLogin">
+                <app-login (forgetPasswordSelect) ="openForgetPassModal($event,popup)" (loginSuccess) ="loggedin($event)"></app-login>
+            </div>
+            <div *ngIf="showSignUp">
+                <app-signup (loginSelect) = "openLoginModal($event,popup)" (signUpSuccess) ="signedup($event)"></app-signup>
+            </div>
+            <div *ngIf="showForgetPass">
+                <app-forget-password (forgertPassSuccess) ="passwordChanged($event)"></app-forget-password>
+            </div>
+            <div *ngIf="false">
+              <app-login-again (loginSelect) = "openLoginModal($event,popup)"></app-login-again>
+            </div>
+    </div>
+    </div>
+</ng-template>
+
+
+<!-- <button type="button" class="btn btn-primary" (click)="openModal(template)">Create template modal</button>
+ 
+<ng-template #template>
+  <div class="modal-header">
+    <h4 class="modal-title pull-left">Modal</h4>
+    <button type="button" class="close pull-right" aria-label="Close" (click)="modalRef.hide()">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+  <div class="modal-body">
+    This is a modal.
+  </div>
+</ng-template> -->
