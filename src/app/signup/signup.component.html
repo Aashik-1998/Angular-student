@@ -13,7 +13,6 @@
     </div>
     <div class="input-container">
         <select class="inputText"  name="role" formControlName="role" required>
-            <!-- <option value="" class="floating-label" disabled>Choose your Role</option> -->
             <option *ngFor="let role of roles" class="floating-label"  [ngValue]="role">{{role}}</option>
          </select>
         <!-- <input type="text" class="inputText" name="role" formControlName="role" required/> -->
